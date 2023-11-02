@@ -1,0 +1,49 @@
+.top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding-right:  40px;
+  padding-left:  40px;
+  padding-top: 10px;
+ 
+}
+.nav-links{
+    display: flex;
+    justify-content: center;
+   
+}
+.nav-link a{
+    color: #615c5c;
+    font-size: 18px;
+}
+
+
+
+.logo{
+    width: 30px;
+}
+.name a:hover{
+  
+   
+}
+.header{
+    background-color: white;
+   
+}
+
+.left-head{
+display: flex;
+gap: 5px;
+}
+.first-name{
+    color: rgb(79, 134, 238);
+    font-size: 40px;
+}
+.last-name{
+    color: rgb(72, 69, 69);
+    font-size: 40px;
+}
+
+.btn btn-primary{
+    height: 40px;
+}
