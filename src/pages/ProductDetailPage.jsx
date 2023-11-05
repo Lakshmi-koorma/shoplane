@@ -87,7 +87,9 @@ function ProductDetailPage() {
               <br />
 
               <button
-                className="btn btn-primary addbtn"
+                className={
+                  inCart ? "btn btn-danger addbtn" : "btn btn-primary addbtn"
+                }
                 onClick={onAddToCartHandler}>
                 {inCart ? "Remove from cart" : "Add to cart"}
               </button>

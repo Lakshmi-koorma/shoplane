@@ -137,3 +137,8 @@ body{
 [data-star^="4.8"]::after{width:96%}
 [data-star^="4.9"]::after{width:98%}
 [data-star^="5"]::after{width:100%}
+
+.toast-message{
+  font-size: 20px;
+  
+}

@@ -6,6 +6,8 @@ import wishListIcon from "../images/wishListIcon.png";
 import redheart from "../images/redheart.png";
 import { addToWishList, removeFromWishList } from "../redux/wishListSlice";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Product = (props) => {
   const { id, title, image, price, rating } = props.data;
@@ -33,8 +35,18 @@ const Product = (props) => {
     });
     if (flag) {
       dispatch(removeItem(id));
+      toast.success("Product removed from cart!", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className: "toast-message",
+        autoClose: 1500,
+      });
     } else {
       dispatch(addToCart(product));
+      toast.success("Product successfully added to cart!", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        className: "toast-message",
+        autoClose: 1500,
+      });
     }
   };
 
@@ -117,10 +129,13 @@ const Product = (props) => {
             </p>
 
             <button
-              className="btn btn-primary addbtn"
-              onClick={onAddToCartHandler}>
+              onClick={onAddToCartHandler}
+              className={
+                inCart ? "btn btn-danger addbtn" : "btn btn-primary addbtn"
+              }>
               {inCart ? "Remove from cart" : "Add to cart"}
             </button>
+            <ToastContainer />
           </div>
         </div>
       </div>

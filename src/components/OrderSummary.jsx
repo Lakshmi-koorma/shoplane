@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import "../styles/cart.css";
+import { Link } from "react-router-dom";
 
 function OrderSummary() {
   const { cart } = useSelector((state) => state.cart);
@@ -16,11 +17,21 @@ function OrderSummary() {
 
   return (
     <div className="total">
-      <p>Total ({getTotal().totalQuantity} items) :</p>
-      <div>
-        <p className="total__p">
-          <strong>${getTotal().totalPrice}</strong>
-        </p>
+      <p>Price Details({getTotal().totalQuantity} items) </p>
+      <p>
+        Total MRP <strong>${getTotal().totalPrice}</strong>
+      </p>
+      <p>
+        Convienience fee <strong>$20</strong>
+      </p>
+      <p>
+        Total price<strong>${getTotal().totalPrice + 20}</strong>{" "}
+      </p>
+      <div className="btn-summary">
+        <Link to={"/"}>
+          <button className="btn btn-primary">Continue shopping</button>
+        </Link>
+        <button className="btn btn-primary">Checkout</button>
       </div>
     </div>
   );

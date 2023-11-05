@@ -32,7 +32,7 @@ function SignUp() {
             alertClass: "alert alert-success",
           });
 
-          navigate("/login");
+          // navigate("/login");
         },
         (error) => {
           setRequestResponse({
@@ -219,7 +219,7 @@ function SignUp() {
               <br />
               <p className="text-center">
                 {" "}
-                Already Registerd?<Link to="/login">click here</Link>
+                Already Registerd?<Link to="/login">click here to login</Link>
               </p>
             </div>
           </div>

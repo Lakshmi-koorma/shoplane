@@ -21,21 +21,23 @@ function CartPage() {
 
       <div className="cart">
         <h2>Order Summary</h2>
-        <div className="cart">
-          {cart?.map((item) => (
-            <CartItem data={item} />
-          ))}
+        <div className="cartss">
+          <div className="cart">
+            {cart?.map((item) => (
+              <CartItem data={item} />
+            ))}
+          </div>
+          {getTotalQuantity() > 0 ? (
+            <div className="checkout">
+              <OrderSummary />
+            </div>
+          ) : (
+            <div className="cartMessage">
+              <p> Your Shopping Cart is Empty</p>
+              <img src={cartEmpty} alt="image" />
+            </div>
+          )}
         </div>
-        {getTotalQuantity() > 0 ? (
-          <div className="checkout">
-            <OrderSummary />
-          </div>
-        ) : (
-          <div className="cartMessage">
-            <p> Your Shopping Cart is Empty</p>
-            <img src={cartEmpty} alt="image" />
-          </div>
-        )}
       </div>
     </>
   );
